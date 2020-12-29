@@ -1,9 +1,9 @@
-package com.keykeepers.immersivegramophone;
+package com.keykeepers.gramophone;
 
 import blusunrize.immersiveengineering.api.wires.WireType;
 import blusunrize.immersiveengineering.common.items.IEItems;
-import com.keykeepers.immersivegramophone.common.AluminumBronze;
-import com.keykeepers.immersivegramophone.common.Registry;
+import com.keykeepers.gramophone.common.AluminumBronze;
+import com.keykeepers.gramophone.common.Registry;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -23,9 +23,9 @@ import org.apache.logging.log4j.Logger;
 import javax.annotation.Nonnull;
 import java.util.stream.Collectors;
 
-@Mod(ImmersiveGramophone.MODID)
-public class ImmersiveGramophone {
-  public static final String MODID = "immersivegramophone";
+@Mod(GramophoneMod.MODID)
+public class GramophoneMod {
+  public static final String MODID = "gramophone";
   public static final ItemGroup itemGroup;
   public static final Registry registry;
 
@@ -40,7 +40,7 @@ public class ImmersiveGramophone {
     registry = new Registry(MODID, itemGroup);
   }
 
-  public ImmersiveGramophone() {
+  public GramophoneMod() {
     registry.registerBus(FMLJavaModLoadingContext.get().getModEventBus());
     AluminumBronze.init();
 

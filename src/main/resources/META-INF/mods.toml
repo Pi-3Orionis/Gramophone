@@ -5,7 +5,7 @@ license="TODO: creative commons"
 #issueTrackerURL="http://my.issue.tracker/" #optional
 
 [[mods]] #mandatory
-modId="immersivegramophone"
+modId="gramophone"
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
@@ -29,14 +29,14 @@ interfaces together in a way that lays a foundation for a future mod by this aut
 standalone fashion.
 '''
 
-[[dependencies.immersivegramophone]]
+[[dependencies.gramophone]]
   modId="immersiveengineering"
   mandatory=true
   versionRange="[1.16.4,)"
   ordering="NONE"
   side="BOTH"
 
-[[dependencies.immersivegramophone]]
+[[dependencies.gramophone]]
   modId="forge"
   mandatory=true
   versionRange="[${forge_version},)"
