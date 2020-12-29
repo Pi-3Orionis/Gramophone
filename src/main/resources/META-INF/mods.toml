@@ -10,7 +10,7 @@ modId="gramophone"
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
 version="${file.jarVersion}"
-displayName="Immersive Gramophone"
+displayName="Gramophone"
 # A URL to query for updates for this mod. See the JSON update specification <here>
 #updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -22,7 +22,7 @@ displayName="Immersive Gramophone"
 # A text field displayed in the mod UI
 authors="Keykeepers Interactive"
 description='''
-Immersive Gramophone
+Gramophone
 
 Adds a few pieces of technology that are appropriate to the spirit and aesthetics of Immersive Engineering. The tech
 interfaces together in a way that lays a foundation for a future mod by this author, but can still be used in a
@@ -40,12 +40,5 @@ standalone fashion.
   modId="forge"
   mandatory=true
   versionRange="[${forge_version},)"
-  ordering="NONE"
-  side="BOTH"
-
-[[dependencies.gramophone]]
-  modId="minecraft"
-  mandatory=true
-  versionRange="[${mc_version}]"
   ordering="NONE"
   side="BOTH"

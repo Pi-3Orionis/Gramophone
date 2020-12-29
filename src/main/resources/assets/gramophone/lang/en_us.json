@@ -3,12 +3,12 @@
   "language.code": "en_us",
   "language.region": "United States",
   "itemGroup.gramophone": "Gramophone",
-  "block.immersivegramophone.storage_alum_bronze": "Block of Aluminum Bronze",
-  "block.immersivegramophone.slab_storage_alum_bronze": "Aluminum Bronze Slab",
-  "block.immersivegramophone.sheetmetal_alum_bronze": "Aluminum Bronze Sheetmetal",
-  "block.immersivegramophone.slab_sheetmetal_alum_bronze": "Aluminum Bronze Sheetmetal Slab",
-  "item.immersivegramophone.ingot_alum_bronze": "Aluminum Bronze Ingot",
-  "item.immersivegramophone.nugget_alum_bronze": "Aluminum Bronze Nugget",
-  "item.immersivegramophone.dust_alum_bronze": "Aluminum Bronze Grit",
-  "item.immersivegramophone.plate_alum_bronze": "Aluminum Bronze Plate"
+  "block.gramophone.storage_alum_bronze": "Block of Aluminum Bronze",
+  "block.gramophone.slab_storage_alum_bronze": "Aluminum Bronze Slab",
+  "block.gramophone.sheetmetal_alum_bronze": "Aluminum Bronze Sheetmetal",
+  "block.gramophone.slab_sheetmetal_alum_bronze": "Aluminum Bronze Sheetmetal Slab",
+  "item.gramophone.ingot_alum_bronze": "Aluminum Bronze Ingot",
+  "item.gramophone.nugget_alum_bronze": "Aluminum Bronze Nugget",
+  "item.gramophone.dust_alum_bronze": "Aluminum Bronze Grit",
+  "item.gramophone.plate_alum_bronze": "Aluminum Bronze Plate"
 }
