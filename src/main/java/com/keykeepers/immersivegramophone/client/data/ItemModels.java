@@ -1,7 +1,7 @@
 package com.keykeepers.immersivegramophone.client.data;
 
 import com.keykeepers.immersivegramophone.ImmersiveGramophone;
-import com.keykeepers.immersivegramophone.common.AluminumBrass;
+import com.keykeepers.immersivegramophone.common.AluminumBronze;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
@@ -22,20 +22,20 @@ public class ItemModels extends ItemModelProvider {
   protected void registerModels() {
     // BLOCK ITEMS
     // Aluminum Brass
-    blockItem(AluminumBrass.storageBlock());
-    blockItem(AluminumBrass.storageSlab());
-    blockItem(AluminumBrass.sheetmetalBlock());
-    blockItem(AluminumBrass.sheetmetalSlab());
+    blockItem(AluminumBronze.storageBlock());
+    blockItem(AluminumBronze.storageSlab());
+    blockItem(AluminumBronze.sheetmetalBlock());
+    blockItem(AluminumBronze.sheetmetalSlab());
 
     if (generatedItem == null)
       generatedItem = getExistingFile(mcLoc("item/generated"));
 
     // SIMPLE ITEMS
     // Aluminum Brass
-    simpleItem(AluminumBrass.ingot());
-    simpleItem(AluminumBrass.nugget());
-    simpleItem(AluminumBrass.dust());
-    simpleItem(AluminumBrass.plate());
+    simpleItem(AluminumBronze.ingot());
+    simpleItem(AluminumBronze.nugget());
+    simpleItem(AluminumBronze.dust());
+    simpleItem(AluminumBronze.plate());
   }
 
   private <B extends Block> void blockItem(B block) {

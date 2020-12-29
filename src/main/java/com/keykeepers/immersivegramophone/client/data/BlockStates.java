@@ -1,7 +1,7 @@
 package com.keykeepers.immersivegramophone.client.data;
 
 import com.keykeepers.immersivegramophone.ImmersiveGramophone;
-import com.keykeepers.immersivegramophone.common.AluminumBrass;
+import com.keykeepers.immersivegramophone.common.AluminumBronze;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
@@ -18,12 +18,12 @@ public class BlockStates extends BlockStateProvider {
   @Override
   protected void registerStatesAndModels() {
     // Aluminum Brass
-    simpleBlock(AluminumBrass.storageBlock().getBlock());
-    slabBlock(AluminumBrass.storageSlab(), AluminumBrass.storageBlock().getRegistryName(),
-        slabTexture(AluminumBrass.storageBlock()));
-    simpleBlock(AluminumBrass.sheetmetalBlock().getBlock());
-    slabBlock(AluminumBrass.sheetmetalSlab(), AluminumBrass.sheetmetalBlock().getRegistryName(),
-        slabTexture(AluminumBrass.sheetmetalBlock()));
+    simpleBlock(AluminumBronze.storageBlock().getBlock());
+    slabBlock(AluminumBronze.storageSlab(), AluminumBronze.storageBlock().getRegistryName(),
+        slabTexture(AluminumBronze.storageBlock()));
+    simpleBlock(AluminumBronze.sheetmetalBlock().getBlock());
+    slabBlock(AluminumBronze.sheetmetalSlab(), AluminumBronze.sheetmetalBlock().getRegistryName(),
+        slabTexture(AluminumBronze.sheetmetalBlock()));
   }
 
   private ResourceLocation slabTexture(Block block) {

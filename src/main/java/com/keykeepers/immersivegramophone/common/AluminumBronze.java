@@ -9,7 +9,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 
-public class AluminumBrass {
+public class AluminumBronze {
   private static final String name;
   private static final Registry.BlockAndItem<Block> storageBlock;
   private static final Registry.BlockAndItem<SlabBlock> storageSlab;
@@ -23,7 +23,7 @@ public class AluminumBrass {
   private static final Registry registry = ImmersiveGramophone.registry;
 
   static {
-    name = "alum_brass";
+    name = "alum_bronze";
     AbstractBlock.Properties storageProperties = AbstractBlock.Properties.create(Material.IRON)
         .sound(SoundType.METAL)
         .hardnessAndResistance(5, 10)

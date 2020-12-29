@@ -20,16 +20,16 @@ public class Config {
   }
 
   public static class General {
-    public final BooleanValue removeAluminumBrass;
+    public final BooleanValue removeAluminumBronze;
 
     General(Builder builder) {
       builder.push("General");
 
       // Aluminum Brass
-      removeAluminumBrass = builder.comment((("Disables alloy recipes for making aluminum brass via " +
-          ("this mod. If there isn't some alternative for making either brass or aluminum brass, this" +
+      removeAluminumBronze = builder.comment((("Disables alloy recipes for making Aluminum Bronze via " +
+          ("this mod. If there isn't some alternative for making brass, bronze or aluminum brass, this" +
               "will make many recipes in this mod impossible!"))))
-          .define("removeAluminumBrass", false);
+          .define("removeAluminumBronze", false);
 
       builder.pop();
     }

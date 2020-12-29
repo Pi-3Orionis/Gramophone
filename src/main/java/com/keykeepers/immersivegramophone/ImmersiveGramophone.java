@@ -2,7 +2,7 @@ package com.keykeepers.immersivegramophone;
 
 import blusunrize.immersiveengineering.api.wires.WireType;
 import blusunrize.immersiveengineering.common.items.IEItems;
-import com.keykeepers.immersivegramophone.common.AluminumBrass;
+import com.keykeepers.immersivegramophone.common.AluminumBronze;
 import com.keykeepers.immersivegramophone.common.Registry;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
@@ -20,13 +20,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.annotation.Nonnull;
 import java.util.stream.Collectors;
 
 @Mod(ImmersiveGramophone.MODID)
 public class ImmersiveGramophone {
   public static final String MODID = "immersivegramophone";
-  public static final String MODNAME = "Immersive Gramophone";
-  public static final String VERSION = "${version}";
   public static final ItemGroup itemGroup;
   public static final Registry registry;
 
@@ -35,6 +34,7 @@ public class ImmersiveGramophone {
   static {
     itemGroup = new ItemGroup(MODID) {
       @Override
+      @Nonnull
       public ItemStack createIcon() { return new ItemStack(IEItems.Misc.wireCoils.get(WireType.REDSTONE)); }
     };
     registry = new Registry(MODID, itemGroup);
@@ -42,7 +42,7 @@ public class ImmersiveGramophone {
 
   public ImmersiveGramophone() {
     registry.registerBus(FMLJavaModLoadingContext.get().getModEventBus());
-    AluminumBrass.init();
+    AluminumBronze.init();
 
     // Register the setup method for modloading
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
