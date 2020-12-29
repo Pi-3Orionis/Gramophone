@@ -1,7 +1,7 @@
-package com.keykeepers.immersivegramophone.client.data;
+package com.keykeepers.gramophone.client.data;
 
-import com.keykeepers.immersivegramophone.ImmersiveGramophone;
-import com.keykeepers.immersivegramophone.common.AluminumBronze;
+import com.keykeepers.gramophone.GramophoneMod;
+import com.keykeepers.gramophone.common.AluminumBronze;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class BlockStates extends BlockStateProvider {
   public BlockStates(DataGenerator gen, ExistingFileHelper exFileHelper) {
-    super(gen, ImmersiveGramophone.MODID, exFileHelper);
+    super(gen, GramophoneMod.MODID, exFileHelper);
   }
 
   @Override

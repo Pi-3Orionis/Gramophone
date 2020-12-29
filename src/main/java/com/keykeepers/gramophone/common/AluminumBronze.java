@@ -1,6 +1,6 @@
-package com.keykeepers.immersivegramophone.common;
+package com.keykeepers.gramophone.common;
 
-import com.keykeepers.immersivegramophone.ImmersiveGramophone;
+import com.keykeepers.gramophone.GramophoneMod;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
@@ -20,7 +20,7 @@ public class AluminumBronze {
   private static final Item dust;
   private static final Item plate;
 
-  private static final Registry registry = ImmersiveGramophone.registry;
+  private static final Registry registry = GramophoneMod.registry;
 
   static {
     name = "alum_bronze";

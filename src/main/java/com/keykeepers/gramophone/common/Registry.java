@@ -1,4 +1,4 @@
-package com.keykeepers.immersivegramophone.common;
+package com.keykeepers.gramophone.common;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;

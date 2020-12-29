@@ -1,8 +1,8 @@
-package com.keykeepers.immersivegramophone.common.data;
+package com.keykeepers.gramophone.common.data;
 
-import com.keykeepers.immersivegramophone.ImmersiveGramophone;
-import com.keykeepers.immersivegramophone.client.data.BlockStates;
-import com.keykeepers.immersivegramophone.client.data.ItemModels;
+import com.keykeepers.gramophone.GramophoneMod;
+import com.keykeepers.gramophone.client.data.BlockStates;
+import com.keykeepers.gramophone.client.data.ItemModels;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -13,7 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 
 // TODO: Mod agnostic, or maybe can be made so
 
-@EventBusSubscriber(modid = ImmersiveGramophone.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = GramophoneMod.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class DataGatherer {
 
   @SubscribeEvent

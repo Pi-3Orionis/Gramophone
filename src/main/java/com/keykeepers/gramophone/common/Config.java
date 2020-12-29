@@ -1,12 +1,12 @@
-package com.keykeepers.immersivegramophone.common;
+package com.keykeepers.gramophone.common;
 
-import com.keykeepers.immersivegramophone.ImmersiveGramophone;
+import com.keykeepers.gramophone.GramophoneMod;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.*;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-@EventBusSubscriber(modid = ImmersiveGramophone.MODID, bus = Bus.MOD)
+@EventBusSubscriber(modid = GramophoneMod.MODID, bus = Bus.MOD)
 public class Config {
   public static final ForgeConfigSpec ALL;
   public static final General GENERAL;
@@ -25,7 +25,7 @@ public class Config {
     General(Builder builder) {
       builder.push("General");
 
-      // Aluminum Brass
+      // Aluminum Bronze
       removeAluminumBronze = builder.comment((("Disables alloy recipes for making Aluminum Bronze via " +
           ("this mod. If there isn't some alternative for making brass, bronze or aluminum brass, this" +
               "will make many recipes in this mod impossible!"))))
