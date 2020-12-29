@@ -43,9 +43,9 @@ standalone fashion.
   ordering="NONE"
   side="BOTH"
 
-[[dependencies.immersivephone]]
+[[dependencies.gramophone]]
   modId="minecraft"
   mandatory=true
-  versionRange="[${mc_vgramoersion}]"
+  versionRange="[${mc_version}]"
   ordering="NONE"
   side="BOTH"
