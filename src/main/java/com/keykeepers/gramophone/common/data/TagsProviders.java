@@ -6,12 +6,14 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
 import net.minecraft.item.Item;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ITag;
 import net.minecraft.tags.ITag.INamedTag;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 // TODO Mod agnostic
@@ -19,6 +21,8 @@ import java.util.HashMap;
 public class TagsProviders {
   public static final HashMap<Block, INamedTag<Block>> blockTagsMap = new HashMap<>();
   public static final HashMap<Item, INamedTag<Item>> itemTagsMap = new HashMap<>();
+  public static final HashMap<String, ArrayList<INamedTag<Item>>> subgroupItemsMap = new HashMap<>();
+  public static final HashMap<String, INamedTag<Item>> subgroupTagsMap = new HashMap<>();
 
   public static ResourceLocation forgeLoc(String name) {
     return new ResourceLocation("forge", name);
@@ -34,6 +38,14 @@ public class TagsProviders {
     INamedTag<Item> tag = ItemTags.makeWrapperTag(forgeLoc(tagString).toString());
     itemTagsMap.put(item, tag);
     return tag;
+  }
+
+  public static INamedTag<Item> addItemSubgroupTag(INamedTag<Item> itemTag, String subgroup) {
+    ArrayList<INamedTag<Item>> items = subgroupItemsMap.computeIfAbsent(subgroup, k -> new ArrayList<>());
+    items.add(itemTag);
+    if (!subgroupTagsMap.containsKey(subgroup))
+      subgroupTagsMap.put(subgroup, ItemTags.makeWrapperTag(forgeLoc(subgroup).toString()));
+    return subgroupTagsMap.get(subgroup);
   }
 
   public final ModBlockTagsProvider blockTagsProvider;
@@ -75,6 +87,12 @@ public class TagsProviders {
       for (Item item : itemTagsMap.keySet()) {
         INamedTag<Item> tag = itemTagsMap.get(item);
         getOrCreateBuilder(tag).add(item);
+      }
+
+      for (String subGroup : subgroupTagsMap.keySet()) {
+        INamedTag<Item> tag = subgroupTagsMap.get(subGroup);
+        for (INamedTag<Item> itemTag : subgroupItemsMap.get(subGroup))
+          getOrCreateBuilder(tag).addTag(itemTag);
       }
     }
   }

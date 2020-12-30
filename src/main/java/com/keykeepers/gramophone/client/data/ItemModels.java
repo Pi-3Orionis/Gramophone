@@ -36,6 +36,7 @@ public class ItemModels extends ItemModelProvider {
     simpleItem(AluminumBronze.nugget());
     simpleItem(AluminumBronze.dust());
     simpleItem(AluminumBronze.plate());
+    simpleItem(AluminumBronze.rod());
   }
 
   private <B extends Block> void blockItem(B block) {

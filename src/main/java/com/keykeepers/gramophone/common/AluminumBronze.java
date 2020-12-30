@@ -7,10 +7,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.data.RecipeProvider;
-import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.item.Item;
-import net.minecraft.tags.ITag;
+import net.minecraft.tags.ITag.INamedTag;
 import net.minecraftforge.common.ToolType;
 
 public class AluminumBronze {
@@ -23,6 +21,7 @@ public class AluminumBronze {
   private static final Item nugget;
   private static final Item dust;
   private static final Item plate;
+  private static final Item rod;
 
   private static final Registry registry = GramophoneMod.registry;
 
@@ -51,6 +50,9 @@ public class AluminumBronze {
     TagsProviders.addItemTag(dust, "dusts/" + name);
     plate = registry.registerItem("plate_" + name);
     TagsProviders.addItemTag(plate, "plates/" + name);
+    rod = registry.registerItem("stick_" + name);
+    INamedTag<Item> rodTag = TagsProviders.addItemTag(rod, "rods/" + name);
+    TagsProviders.addItemSubgroupTag(rodTag, "rods/all_metal");
   }
 
   public static void init() { }
@@ -68,4 +70,5 @@ public class AluminumBronze {
   public static Item nugget() { return nugget; }
   public static Item dust() { return dust; }
   public static Item plate() { return plate; }
+  public static Item rod() { return rod; }
 }
