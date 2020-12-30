@@ -1,12 +1,16 @@
 package com.keykeepers.gramophone.common;
 
 import com.keykeepers.gramophone.GramophoneMod;
+import com.keykeepers.gramophone.common.data.TagsProviders;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.data.RecipeProvider;
+import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.item.Item;
+import net.minecraft.tags.ITag;
 import net.minecraftforge.common.ToolType;
 
 public class AluminumBronze {
@@ -31,16 +35,22 @@ public class AluminumBronze {
         .harvestTool(ToolType.PICKAXE)
         .harvestLevel(2);
     storageBlock = registry.registerBlock("storage_" + name, storageProperties);
+    TagsProviders.addBlockTag(storageBlock.block, "storage_blocks/" + name());
     storageSlab = registry.registerSlab("slab_storage_" + name, storageProperties);
-    AbstractBlock.Properties sheetMetalProperties = AbstractBlock.Properties.create(Material.IRON)
+    AbstractBlock.Properties sheetmetalProperties = AbstractBlock.Properties.create(Material.IRON)
         .sound(SoundType.METAL)
         .hardnessAndResistance(3, 10);
-    sheetmetalBlock = registry.registerBlock("sheetmetal_" + name, sheetMetalProperties);
-    sheetmetalSlab = registry.registerSlab("slab_sheetmetal_" + name, sheetMetalProperties);
+    sheetmetalBlock = registry.registerBlock("sheetmetal_" + name, sheetmetalProperties);
+    TagsProviders.addBlockTag(sheetmetalBlock.block, "sheetmetals/" + name());
+    sheetmetalSlab = registry.registerSlab("slab_sheetmetal_" + name, sheetmetalProperties);
     ingot = registry.registerItem("ingot_" + name);
+    TagsProviders.addItemTag(ingot, "ingots/" + name);
     nugget = registry.registerItem("nugget_" + name);
+    TagsProviders.addItemTag(nugget, "nuggets/" + name);
     dust = registry.registerItem("dust_" + name);
+    TagsProviders.addItemTag(dust, "dusts/" + name);
     plate = registry.registerItem("plate_" + name);
+    TagsProviders.addItemTag(plate, "plates/" + name);
   }
 
   public static void init() { }
