@@ -8,8 +8,13 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.tags.ITag;
 import net.minecraft.tags.ITag.INamedTag;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
+
+import java.util.ArrayList;
 
 public class AluminumBronze {
   private static final String name;
@@ -53,6 +58,15 @@ public class AluminumBronze {
     rod = registry.registerItem("stick_" + name);
     INamedTag<Item> rodTag = TagsProviders.addItemTag(rod, "rods/" + name);
     TagsProviders.addItemSubgroupTag(rodTag, "rods/all_metal");
+
+    // Copper Alloy subgroups
+    for (String group : new String[] { "sheetmetals", "ingots", "nuggets", "dusts", "plates", "rods" }) {
+      String[] alloys = { "alum_bronze", "aluminum_bronze", "brass", "bronze", "alum_brass", "aluminum_brass" };
+      for (String alloy : alloys) {
+        ResourceLocation loc = new ResourceLocation("forge", group + '/' + alloy);
+        TagsProviders.addItemSubgroupOptionalTag(loc, group + "/copper_alloy");
+      }
+    }
   }
 
   public static void init() { }

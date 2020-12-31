@@ -23,6 +23,7 @@ public class TagsProviders {
   public static final HashMap<Item, INamedTag<Item>> itemTagsMap = new HashMap<>();
   public static final HashMap<String, ArrayList<INamedTag<Item>>> subgroupItemsMap = new HashMap<>();
   public static final HashMap<String, INamedTag<Item>> subgroupTagsMap = new HashMap<>();
+  public static final HashMap<String, ArrayList<ResourceLocation>> subgroupOptionalTagsMap = new HashMap<>();
 
   public static ResourceLocation forgeLoc(String name) {
     return new ResourceLocation("forge", name);
@@ -43,6 +44,15 @@ public class TagsProviders {
   public static INamedTag<Item> addItemSubgroupTag(INamedTag<Item> itemTag, String subgroup) {
     ArrayList<INamedTag<Item>> items = subgroupItemsMap.computeIfAbsent(subgroup, k -> new ArrayList<>());
     items.add(itemTag);
+    if (!subgroupTagsMap.containsKey(subgroup))
+      subgroupTagsMap.put(subgroup, ItemTags.makeWrapperTag(forgeLoc(subgroup).toString()));
+    return subgroupTagsMap.get(subgroup);
+  }
+
+  public static INamedTag<Item> addItemSubgroupOptionalTag(ResourceLocation optionalTag, String subgroup) {
+    ArrayList<ResourceLocation> optionalTags = subgroupOptionalTagsMap.computeIfAbsent(subgroup,
+        k -> new ArrayList<>());
+    optionalTags.add(optionalTag);
     if (!subgroupTagsMap.containsKey(subgroup))
       subgroupTagsMap.put(subgroup, ItemTags.makeWrapperTag(forgeLoc(subgroup).toString()));
     return subgroupTagsMap.get(subgroup);
@@ -91,8 +101,12 @@ public class TagsProviders {
 
       for (String subGroup : subgroupTagsMap.keySet()) {
         INamedTag<Item> tag = subgroupTagsMap.get(subGroup);
-        for (INamedTag<Item> itemTag : subgroupItemsMap.get(subGroup))
-          getOrCreateBuilder(tag).addTag(itemTag);
+        if (subgroupItemsMap.containsKey(subGroup))
+          for (INamedTag<Item> itemTag : subgroupItemsMap.get(subGroup))
+            getOrCreateBuilder(tag).addTag(itemTag);
+          if (subgroupOptionalTagsMap.containsKey(subGroup))
+            for(ResourceLocation loc : subgroupOptionalTagsMap.get(subGroup))
+              getOrCreateBuilder(tag).addOptionalTag(loc);
       }
     }
   }

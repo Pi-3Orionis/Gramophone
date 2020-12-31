@@ -2,6 +2,7 @@ package com.keykeepers.gramophone.client.data;
 
 import com.keykeepers.gramophone.GramophoneMod;
 import com.keykeepers.gramophone.common.AluminumBronze;
+import com.keykeepers.gramophone.common.items.ToneArm;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
@@ -37,6 +38,9 @@ public class ItemModels extends ItemModelProvider {
     simpleItem(AluminumBronze.dust());
     simpleItem(AluminumBronze.plate());
     simpleItem(AluminumBronze.rod());
+
+    // Components
+    simpleItem(ToneArm.item);
   }
 
   private <B extends Block> void blockItem(B block) {

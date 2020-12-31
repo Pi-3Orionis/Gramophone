@@ -1,5 +1,6 @@
 package com.keykeepers.gramophone.server.data;
 
+import com.keykeepers.gramophone.GramophoneMod;
 import com.keykeepers.gramophone.common.data.TagsProviders;
 import net.minecraft.data.*;
 import net.minecraft.item.Item;
@@ -8,6 +9,7 @@ import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 
+import javax.annotation.Resource;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -19,6 +21,14 @@ public class Recipes extends RecipeProvider {
   public Recipes(DataGenerator generatorIn, String modId) {
     super(generatorIn);
     this.modId = modId;
+  }
+
+  protected ResourceLocation forgeLoc(String path) {
+    return new ResourceLocation("forge", path);
+  }
+
+  protected ResourceLocation modLoc(String path) {
+    return new ResourceLocation(modId, path);
   }
 
   protected void packingRecipes(Consumer<IFinishedRecipe> consumer, Item storageItem, Item componentItem,
