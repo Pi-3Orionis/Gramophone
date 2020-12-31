@@ -10,6 +10,7 @@ import blusunrize.immersiveengineering.common.blocks.EnumMetals;
 import blusunrize.immersiveengineering.common.items.IEItems;
 import com.keykeepers.gramophone.GramophoneMod;
 import com.keykeepers.gramophone.common.AluminumBronze;
+import com.keykeepers.gramophone.common.blocks.Gramophone;
 import com.keykeepers.gramophone.common.data.TagsProviders;
 import com.keykeepers.gramophone.common.items.ToneArm;
 import net.minecraft.data.DataGenerator;
@@ -45,6 +46,17 @@ public class ModRecipes extends Recipes {
         .patternLine("dps")
         .addCriterion("has_diamond", hasItem(Tags.Items.GEMS_DIAMOND))
         .build(consumer, modLoc(pathName(ToneArm.item)));
+
+    // Gramophone
+    ShapedRecipeBuilder.shapedRecipe(Gramophone.item())
+        .key('s', TagsProviders.subgroupTagsMap.get("sheetmetals/copper_alloy"))
+        .key('t', ToneArm.item)
+        .key('n', Items.NOTE_BLOCK)
+        .patternLine("s")
+        .patternLine("t")
+        .patternLine("n")
+        .addCriterion("has_tone_arm", hasItem(ToneArm.item))
+        .build(consumer, modLoc(pathName(Gramophone.item())));
   }
 
   private void aluminumBronze(Consumer<IFinishedRecipe> consumer) {

@@ -4,6 +4,7 @@ import blusunrize.immersiveengineering.api.wires.WireType;
 import blusunrize.immersiveengineering.common.items.IEItems;
 import com.keykeepers.gramophone.common.AluminumBronze;
 import com.keykeepers.gramophone.common.Registry;
+import com.keykeepers.gramophone.common.blocks.Gramophone;
 import com.keykeepers.gramophone.common.items.ToneArm;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
@@ -45,6 +46,7 @@ public class GramophoneMod {
     registry.registerBus(FMLJavaModLoadingContext.get().getModEventBus());
     AluminumBronze.init();
     ToneArm.init();
+    Gramophone.init();
 
     // Register the setup method for modloading
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
